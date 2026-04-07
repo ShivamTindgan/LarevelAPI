@@ -1,0 +1,36 @@
+12:56:28.508 [main] INFO  api.tests.teacherTests - **************** Requesting Teacher OTP *******************
+12:56:29.274 [main] INFO  api.tests.teacherTests - **************** OTP sent to Teacher *******************
+12:56:29.291 [main] INFO  api.tests.teacherTests - **************** Request for Teacher login *******************
+12:56:29.524 [main] INFO  api.tests.teacherTests - **************** Teacher Login successfull *******************
+12:56:29.526 [main] INFO  api.tests.teacherTests - **************** Getting Teacher students list *******************
+12:56:29.699 [main] INFO  api.tests.teacherTests - **************** Students list fetched *******************
+12:56:29.700 [main] INFO  api.tests.teacherTests - **************** Getting session summaries list *******************
+12:56:29.848 [main] INFO  api.tests.teacherTests - **************** Getting session summaries list is successfull *******************
+12:56:29.850 [main] INFO  api.tests.teacherTests - **************** Approve session summary *******************
+12:56:30.029 [main] INFO  api.tests.teacherTests - **************** Approve session summary is successful *******************
+12:56:30.030 [main] INFO  api.tests.teacherTests - **************** Getting future sessions *******************
+12:56:30.211 [main] INFO  api.tests.teacherTests - **************** Getting future sessions is successful *******************
+12:56:30.212 [main] INFO  api.tests.teacherTests - **************** Getting Class schedule sessions  *******************
+12:56:30.407 [main] INFO  api.tests.teacherTests - **************** Getting Class schedule sessions is successful *******************
+12:56:30.408 [main] INFO  api.tests.teacherTests - **************** GGetting infinity token *******************
+12:56:30.574 [main] INFO  api.tests.teacherTests - **************** Getting infinity token is successful *******************
+12:56:30.575 [main] INFO  api.tests.teacherTests - **************** Getting User profile *******************
+12:56:30.724 [main] INFO  api.tests.teacherTests - **************** GGetting User profile is successful *******************
+12:58:49.196 [main] INFO  api.tests.teacherTests - **************** Requesting Teacher OTP *******************
+12:58:49.891 [main] INFO  api.tests.teacherTests - **************** OTP sent to Teacher *******************
+12:58:49.895 [main] INFO  api.tests.teacherTests - **************** Request for Teacher login *******************
+12:58:50.075 [main] INFO  api.tests.teacherTests - **************** Teacher Login successfull *******************
+12:58:50.077 [main] INFO  api.tests.teacherTests - **************** Getting Teacher students list *******************
+12:58:50.279 [main] INFO  api.tests.teacherTests - **************** Students list fetched *******************
+12:58:50.280 [main] INFO  api.tests.teacherTests - **************** Getting session summaries list *******************
+12:58:50.425 [main] INFO  api.tests.teacherTests - **************** Getting session summaries list is successfull *******************
+12:58:50.426 [main] INFO  api.tests.teacherTests - **************** Approve session summary *******************
+12:58:50.573 [main] INFO  api.tests.teacherTests - **************** Approve session summary is successful *******************
+12:58:50.575 [main] INFO  api.tests.teacherTests - **************** Getting future sessions *******************
+12:58:50.790 [main] INFO  api.tests.teacherTests - **************** Getting future sessions is successful *******************
+12:58:50.791 [main] INFO  api.tests.teacherTests - **************** Getting Class schedule sessions  *******************
+12:58:51.007 [main] INFO  api.tests.teacherTests - **************** Getting Class schedule sessions is successful *******************
+12:58:51.008 [main] INFO  api.tests.teacherTests - **************** GGetting infinity token *******************
+12:58:51.172 [main] INFO  api.tests.teacherTests - **************** Getting infinity token is successful *******************
+12:58:51.173 [main] INFO  api.tests.teacherTests - **************** Getting User profile *******************
+12:58:51.316 [main] INFO  api.tests.teacherTests - **************** GGetting User profile is successful *******************
