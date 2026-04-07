@@ -2,6 +2,10 @@ package api.payload;
 
 public class userPayload {
     String teacher_id ;
+    String teacher_token ;
+    String student_id ;
+    String student_token ;
+
 
     public String getTeacher_id() {
         return teacher_id;
@@ -34,10 +38,5 @@ public class userPayload {
     public void setStudent_token(String student_token) {
         this.student_token = student_token;
     }
-
-    String teacher_token ;
-    String student_id ;
-    String student_token ;
-
 
 }

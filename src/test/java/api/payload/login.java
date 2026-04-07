@@ -3,6 +3,8 @@ package api.payload;
 public class login {
     String isd;
     String mobile;
+    String otp;
+
 
     public String getIsd() {
         return isd;
@@ -28,5 +30,4 @@ public class login {
         this.otp = otp;
     }
 
-    String otp;
 }

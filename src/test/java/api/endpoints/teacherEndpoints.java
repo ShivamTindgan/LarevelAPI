@@ -1,5 +1,8 @@
 package api.endpoints;
 
+import api.payload.login;
+import api.payload.otp;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import org.json.JSONObject;
 import org.json.JSONTokener;
@@ -12,12 +15,51 @@ import static io.restassured.RestAssured.given;
 
 public class teacherEndpoints {
 
+    String student_token;
+    String student_id;
+    String teacher_token;
+    String teacher_id;
+    String user_type;
+    String sessionId;
+    String summaryId;
+    String assignment_id;
+
+    public static Response Otp(login payload)
+    {
+        Response response =given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .header("user-type","teacher")
+                .body(payload)
+
+                .when()
+                .post(Routes.otpUrl);
+        return response;
+
+    }
+
+
+    public static Response login(login payload)
+    {
+        Response response =given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .header("user-type","teacher")
+                .body(payload)
+
+                .when()
+                .post(Routes.loginUrl);
+        return response;
+    }
+
     public static Response getTeacherStudents(String teacher_token, String teacher_id)
     {
         Response response =given()
                 .header("token",teacher_token)
                 .header("user-id",teacher_id)
                 .header("user-type","teacher")
+                .pathParam("teacher_id",teacher_id)
+
                 .when()
                 .get(Routes.teacherStudentsUrl);
         return response;
@@ -39,7 +81,7 @@ public class teacherEndpoints {
         return response;
     }
 
-    public static Response approveSessionSummary(String teacher_token, String teacher_id)
+    public static Response approveSessionSummary(String teacher_token, String teacher_id, int sessionId, int summaryId)
     {
 
         File f = new File(".//body.json");
@@ -53,11 +95,13 @@ public class teacherEndpoints {
         JSONObject data = new JSONObject(jt);
 
         Response response =given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
                 .header("token",teacher_token)
                 .header("user-id",teacher_id)
                 .header("user-type","teacher")
-                .pathParam("summary_session_id","session_id")
-                .pathParam("session_summary_id","summary_id")
+                .pathParam("session_id",sessionId)
+                .pathParam("session_summary_id",summaryId)
                 .body(data)
 
                 .when()
@@ -111,16 +155,18 @@ public class teacherEndpoints {
         return response;
     }
 
-    public static Response tokenInfinity(String teacher_token, String teacher_id)
+    public static Response getInfinityToken(String teacher_token, String teacher_id, int sessionId)
     {
         Response response =given()
                 .header("token",teacher_token)
                 .header("user-id",teacher_id)
                 .header("user-type","teacher")
+                .pathParam("session_id",sessionId)
                 .when()
                 .get(Routes.tokenUrl);
         return response;
     }
+
 
 
 

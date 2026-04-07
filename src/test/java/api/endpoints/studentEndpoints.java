@@ -1,5 +1,8 @@
 package api.endpoints;
 
+import api.payload.login;
+import api.payload.otp;
+import io.restassured.http.ContentType;
 import io.restassured.response.Response;
 import static io.restassured.RestAssured.given;
 import io.restassured.response.Response;
@@ -11,6 +14,34 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 
 public class studentEndpoints {
+
+    public static Response getStudentOtp(login payload)
+    {
+        Response response =given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .header("user-type","student")
+                .body(payload)
+
+                .when()
+                .post(Routes.otpUrl);
+        return response;
+
+    }
+
+
+    public static Response login(login payload)
+    {
+        Response response =given()
+                .contentType(ContentType.JSON)
+                .accept(ContentType.JSON)
+                .header("user-type","student")
+                .body(payload)
+
+                .when()
+                .post(Routes.loginUrl);
+        return response;
+    }
 
     public static Response getStudentSubscription(String student_token, String student_id)
     {
@@ -56,7 +87,7 @@ public class studentEndpoints {
         return response;
     }
 
-    public static Response submitAssignment(String student_token, String student_id, String assignment_id)
+    public static Response submitAssignment(String student_token, String student_id, int assignment_id)
     {
         File file1 = new File(".//Image_one.png");
         File file2 = new File(".//image_two.png");
@@ -75,8 +106,8 @@ public class studentEndpoints {
                 .header("user-type", "student")
                 .header("user-id", student_id)
                 .header("token", student_token)
-//                .header("bu_id", "1")
-                .pathParam("id", assignment_id)
+//
+                .pathParam("assignment_id", assignment_id)
 
                 .when()
                 .post(Routes.studentAssignmentSubmitUrl);
@@ -143,12 +174,13 @@ public class studentEndpoints {
         return response;
     }
 
-    public static Response tokenInfinity(String student_token, String student_id)
+    public static Response getStudentInfinityToken(String student_token, String student_id, int sessionId)
     {
         Response response =given()
                 .header("token",student_token)
                 .header("user-id",student_id)
                 .header("user-type","student")
+                .pathParams("session_id",sessionId)
                 .when()
                 .get(Routes.tokenUrl);
         return response;

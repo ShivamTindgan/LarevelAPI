@@ -29,7 +29,7 @@ public class Routes {
     //Teacher specific Urls
     public static String teacherStudentsUrl=baseUrlStaging+"teachers/{teacher_id}/students";
     public static String sessionSummaryListUrl=baseUrlStaging+"sessions/summary";
-    public static String approveSessionSummaryUrl=baseUrlStaging+"sessions/{summary_session_id}/summary-approve/{session_summary_id}";
+    public static String approveSessionSummaryUrl=baseUrlStaging+"sessions/{session_id}/summary-approve/{session_summary_id}";
 
 
     //Student specific Urls

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+
+    <listeners>
+        <listener class-name="api.utilities.ExtentReportManager"/>
+    </listeners>
+
+
+    <test verbose="2" preserve-order="true" name="LaravelAPI">
+        <classes>
+            <!--            <class name="api.test.DDTests"/>-->
+            <!--                <methods>-->
+            <!--                <include name="testPostUser"/>-->
+            <!--                <include name="testDeleteUser"/>-->
+            <!--                </methods>-->
+            <!--            </class>-->
+            <class name="api.tests.teacherTests"/>
+            <class name="api.tests.studentTests"/>
+            <!--                <methods>-->
+            <!--                <include name="testCreateUser"/>-->
+            <!--                <include name="testGetUserByName"/>-->
+            <!--                <include name="testUpdateUser"/>-->
+            <!--                <include name="testDeleteUser"/>-->
+            <!--                </methods>-->
+            <!--             </class>-->
+        </classes>
+    </test>
+</suite>
