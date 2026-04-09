@@ -1,8 +1,8 @@
 package api.tests;
 
-import api.endpoints.Routes;
+
 import api.endpoints.studentEndpoints;
-import api.endpoints.teacherEndpoints;
+
 import api.payload.login;
 import api.utilities.EnvUtils;
 import io.restassured.response.Response;
@@ -28,21 +28,18 @@ public class studentTests {
         System.out.println("MOBILE=" + System.getenv("MOBILE"));
         System.out.println("OTP=" + System.getenv("OTP"));
         System.out.println("ISD=" + System.getenv("ISD"));
-        System.out.println("stg_MOBILE=" + System.getenv("stg_MOBILE"));
-        System.out.println("stg_OTP=" + System.getenv("stg_OTP"));
-        System.out.println("stg_ISD=" + System.getenv("stg_ISD"));
+        // System.out.println("stg_MOBILE=" + System.getenv("stg_MOBILE"));
+        // System.out.println("stg_OTP=" + System.getenv("stg_OTP"));
+        // System.out.println("stg_ISD=" + System.getenv("stg_ISD"));
 
         loginPayload = new login();
 
         // Support both local env names (MOBILE/OTP/ISD) and prefixed CI/stage names (stg_*)
-        loginPayload.setMobile(EnvUtils.getFirstSet("MOBILE", "stg_MOBILE"));
-        loginPayload.setIsd(EnvUtils.getFirstSet("ISD", "stg_ISD"));
-        loginPayload.setOtp(EnvUtils.getFirstSet("OTP", "stg_OTP"));
+        loginPayload.setMobile(EnvUtils.getFirstSet("MOBILE", "MOBILE"));
+        loginPayload.setIsd(EnvUtils.getFirstSet("ISD", "ISD"));
+        loginPayload.setOtp(EnvUtils.getFirstSet("OTP", "OTP"));
 
 
-//        loginPayload.setMobile("8295802444");
-//        loginPayload.setIsd("+91");
-//        loginPayload.setOtp("2444");
 
         Response res = studentEndpoints.login(loginPayload);
         res.then().log().all();

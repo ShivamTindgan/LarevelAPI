@@ -30,17 +30,10 @@ public class teacherTests {
         System.out.println("MOBILE=" + System.getenv("MOBILE"));
         System.out.println("OTP=" + System.getenv("OTP"));
         System.out.println("ISD=" + System.getenv("ISD"));
-        System.out.println("stg_MOBILE=" + System.getenv("stg_MOBILE"));
-        System.out.println("stg_OTP=" + System.getenv("stg_OTP"));
-        System.out.println("stg_ISD=" + System.getenv("stg_ISD"));
 
-//        loginPayload.setMobile(System.getenv("MOBILE"));
-//        loginPayload.setIsd(System.getenv("ISD"));
-//        loginPayload.setOtp(System.getenv("OTP"));
-
-        loginPayload.setMobile(EnvUtils.getFirstSet("MOBILE", "stg_MOBILE"));
-        loginPayload.setIsd(EnvUtils.getFirstSet("ISD", "stg_ISD"));
-        loginPayload.setOtp(EnvUtils.getFirstSet("OTP", "stg_OTP"));
+        loginPayload.setMobile(EnvUtils.getFirstSet("MOBILE", "MOBILE"));
+        loginPayload.setIsd(EnvUtils.getFirstSet("ISD", "ISD"));
+        loginPayload.setOtp(EnvUtils.getFirstSet("OTP", "OTP"));
 
         Response res = teacherEndpoints.login(loginPayload);
         res.then().log().all();
